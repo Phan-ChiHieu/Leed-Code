@@ -32,16 +32,21 @@ Input
     
 */
 
-let arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
-let n = 1;
+let arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, [9, 10, 11], 12],
+  [13, 14, 15],
+];
+let n = 2;
 
 var flat = function (arr, depth) {
   const stack = [...arr.map((item) => [item, depth])];
   const result = [];
 
   while (stack.length > 0) {
-    // console.log(">>>>>", result);
-    // console.log(":::::", stack);
+    console.log(">>>>>", result);
+    console.log(":::::", stack);
 
     const [item, depth] = stack.pop();
 
@@ -58,3 +63,16 @@ var flat = function (arr, depth) {
 flat(arr, n);
 
 // console.log(flat(arr, n));
+
+//
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// tạo một aray mới với logic thực thì từ array trước đó
+const _stack = [...array.map((item) => item * 2)]; // [2, 4, 6, 8, 10, 12, 14, 16]
+
+// console.log(_stack);
+
+// Kiem tra xem const array co phai la array hay khong
+// console.log(Array.isArray(array)); // true
+
+// console.log(typeof array); // object

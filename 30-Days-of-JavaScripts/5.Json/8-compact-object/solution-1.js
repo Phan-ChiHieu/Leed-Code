@@ -19,13 +19,21 @@ Example 3:
  
 */
 
-let obj = [null, 0, false, 1];
+// let obj = [null, 0, false, 1];
+let obj = [null, 0, 5, [0], [false, 16]];
 
 var compactObject = function (obj) {
   //
   if (obj === null) return null;
 
-  if (Array.isArray(obj)) return obj.filter(Boolean).map(compactObject);
+  if (Array.isArray(obj)) {
+    const _filter = obj.filter(Boolean);
+    const _map = _filter.map(compactObject);
+    // console.log("_filter", _filter);
+    // console.log("_map", _map);
+
+    return _map;
+  }
   if (typeof obj !== "object") return obj;
 
   const compacted = {};
@@ -38,4 +46,10 @@ var compactObject = function (obj) {
   return compacted;
 };
 
-console.log(compactObject(obj));
+// console.log(compactObject(obj));
+
+// 
+const _obj = [null, 0, false, 1, "hello", true, undefined];
+const _filter = _obj.filter(Boolean);
+
+console.log(_filter)
