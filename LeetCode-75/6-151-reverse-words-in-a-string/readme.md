@@ -26,7 +26,7 @@ Output: "blue is sky the"
 
 ## 6. Sau khi kết thúc vòng lặp cần kiểm tra: 
     - 1: Kiểm tra xem có từ cuối cùng trong chuỗi s không vì có thể chuỗi s không kết thúc bằng dấu cách (" "). Nếu không kết thúc bằng dấu cách (" ") thì từ cuối cùng sẽ không được thêm vào ret
-    -2:  Vì vậy, sau vòng lặp, ta lại kiểm tra một lần nữa và nếu word không rỗng, ta thêm từ cuối cùng vào ret.
+    - 2:  Vì vậy, sau vòng lặp, ta lại kiểm tra một lần nữa và nếu word không rỗng, ta thêm từ cuối cùng vào ret.
 
  ## 7. Cuối cùng, sau khi đã xây dựng mảng ret với các từ đã đảo ngược:
     - Ta sử dụng ret.join(" ") để chuyển mảng này thành một chuỗi với các từ được nối lại bằng dấu cách. Kết quả là chuỗi đã đảo ngược.
