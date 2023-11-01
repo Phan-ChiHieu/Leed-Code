@@ -20,7 +20,7 @@ function TreeNode(val, left, right) {
 let root = new TreeNode(1);
 // root.left = new TreeNode(0);
 root.right = new TreeNode(2);
-root.right.left = new TreeNode(1);
+root.right.left = new TreeNode(3);
 // root.right.right = new TreeNode(4);
 
 var findMode = function (root) {
@@ -62,3 +62,6 @@ var findMode = function (root) {
 const rs = findMode(root);
 
 console.log("rs:::", rs);
+
+
+// Chức năng này giúp bạn tìm các giá trị xuất hiện nhiều nhất trong cây nhị phân.
