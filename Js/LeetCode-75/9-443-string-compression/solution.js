@@ -23,52 +23,54 @@ Example 3:
 let chars = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"];
 
 const compresses = function (chars) {
-  let i = 0;
-  let j = 0;
-  while (j < chars.length) {
-    let count = 0;
-    let curr = chars[j];
-    while (j < chars.length && chars[j] === curr) {
-        console.log("trong while:::",curr);
-      j++;
-      count++;
-    }
-    console.log("curr::::::::", curr);
-    console.log("chars[i++]", chars[i++]);
+  // dat 2 co hieu i va j
+  // let i = 0;
+  // let j = 0;
+  // while (j < chars.length) {
+  //   // dat bien count = 0
+  //   let count = 0;
+  //   // dat bien curr =
+  //   let curr = chars[j];
+  //   while (j < chars.length && chars[j] === curr) {
+  //     j++;
+  //     count++;
+  //   }
 
-    chars[i++] = curr;
-    console.log("2::::::::", count);
-    if (count > 1) {
-      // console.log(count);
-      for (let digit of count.toString()) {
-        //
-        chars[i++] = digit;
+  //   chars[i++] = curr;
+  //   if (count > 1) {
+  //     // console.log(count);
+  //     for (let digit of count.toString()) {
+  //       //
+  //       chars[i++] = digit;
+  //     }
+  //   }
+  // }
+  // return i;
+
+
+  // cach 2:
+  if (!chars.length) return 0;
+  let j = 0;
+  let cur = chars[0]; // a
+  let counter = 0;
+  for (let i = 0; i <= chars.length; i++) {
+    if (chars[i] === cur) // a === a 
+    {
+      counter++; //1
+    } else {
+      chars[j] = cur; // a === a
+      if (counter > 1) {
+        const s = counter.toString();
+        for (let k = 0; k < s.length; k++) chars[++j] = s[k];
       }
+      j++;
+      cur = chars[i];
+      counter = 1;
     }
   }
-  return i;
+  return j;
 };
-
-// var compress = function (chars) {
-//   let index = 0;
-//   let i = 0;
-//   while (i < chars.length) {
-//     let j = i;
-//     while (j < chars.length && chars[j] === chars[i]) {
-//       j++;
-//     }
-//     chars[index++] = chars[i];
-//     if (j - i > 1) {
-//       let count = j - i;
-//       for (let digit of count.toString()) {
-//         chars[index++] = digit;
-//       }
-//     }
-//     i = j;
-//   }
-//   return index;
-// };
 
 const rs = compresses(chars);
 
-console.log(chars);
+console.log(rs);
