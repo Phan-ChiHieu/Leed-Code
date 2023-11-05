@@ -34,10 +34,10 @@ var findMode = function (root) {
 
     inOrderTraversal(node.left);
 
-    console.log("currentCount", currentCount);
-    console.log("node.val", node.val);
-    console.log("currentVal", currentVal);
-    console.log("maxCount", maxCount);
+    // console.log("currentCount", currentCount);
+    // console.log("node.val", node.val);
+    // console.log("currentVal", currentVal);
+    // console.log("maxCount", maxCount);
     currentCount = node.val === currentVal ? currentCount + 1 : 1; // 2 === 1 = 1
 
     if (currentCount === maxCount) {
