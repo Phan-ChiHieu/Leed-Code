@@ -10,7 +10,7 @@ Example 2:
     Output: 1
 */
 
-let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+let height = [1, 8, 6, 2, 5, 4, 8, 7, 3];
 
 let maxArea = function (height) {
   //
@@ -22,6 +22,8 @@ let maxArea = function (height) {
     console.log("ans:::", ans);
     console.log("i:::", i);
     console.log("j:::", j);
+    console.log("height[i]:::", height[i]);
+    console.log("height[j]:::", height[j]);
     ans = Math.max(ans, Math.min(height[i], height[j]) * (j - i));
     console.log("ans :::max:::", ans);
     height[i] <= height[j] ? i++ : j--;
