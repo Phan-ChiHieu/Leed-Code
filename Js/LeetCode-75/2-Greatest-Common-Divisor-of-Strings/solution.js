@@ -21,7 +21,7 @@ const gcdOfStrings = (str1, str2) => {
 
   // Dùng thuật toán Euclid để tim ước chung lớn nhất
   const gcd = (a, b) => (0 === b ? a : gcd(b, a % b));
-  //   console.log(gcd(str1.length, str2.length));
+    console.log(gcd(str1.length, str2.length));
   return str1.substring(0, gcd(str1.length, str2.length));
 };
 
