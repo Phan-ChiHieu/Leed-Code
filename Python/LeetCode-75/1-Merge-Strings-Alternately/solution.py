@@ -1,5 +1,4 @@
-/*
-
+"""
 Example 1:
 
     Input: word1 = "abc", word2 = "pqr"
@@ -24,23 +23,15 @@ Example 3:
     word1:  a   b   c   d
     word2:    p   q 
     merged: a p b q c   d
- 
-*/
+"""
 
-let mergeAlternately = function (word1, word2) {
-  let result = "";
-  const _length = Math.max(word1.length, word2.length);
 
-  for (let i = 0; i < _length; i++) {
-    if (i < word1.length) result += word1[i];
-    if (i < word2.length) result += word2[i];
-  }
-  return result;
-};
 
-let word1 = "abc",
-  word2 = "pqr";
+word1 = "abc"
+word2 = "pqr"
 
-const rs = mergeAlternately(word1, word2);
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        return "".join(a + b for a, b in zip(word1, word2)) + word1[len(word2):] + word2[len(word1):]
 
-console.log(rs);
+print(Solution.mergeAlternately('' ,word1, word2))
